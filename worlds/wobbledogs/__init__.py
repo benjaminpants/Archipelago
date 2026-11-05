@@ -73,20 +73,18 @@ class WobbleDogsWorld(World):
             if not value["source_randomizable"]:  # Non-randomizable items are non-randomizable because they are obtained through non-standard means and thus can't be gated. If they are made randomizable, this check must be changed.
                 continue
             if value["default"]:
-                print(key + " is default, adding.")
                 self.multiworld.push_precollected(self.create_item(key))
             else:
-                print(key + " excluded because not default.")
                 item_pool.append(self.create_item(key))
 
         # Add the appropriate flora access items
         for key, value in self.local_wobbledogs_data["flora"].items():
-            print("pushing precollected:" + key)
-            self.multiworld.push_precollected(self.create_item(key))
-
+            if not self.options.flora_lock:
+                self.multiworld.push_precollected(self.create_item(key))
+            else:
+                item_pool.append(self.create_item(key))
 
         unfilled_item_count = len(self.multiworld.get_unfilled_locations(self.player))
-
 
         # Fill remaining with filler item
         filler_count = unfilled_item_count - len(item_pool)
@@ -106,7 +104,6 @@ class WobbleDogsWorld(World):
     def create_food_dispenser_regions(self, name: str, flora_regions: dict[str, Region], parent: Region):
         dispenser_region = Region(name, self.player, self.multiworld)
         self.multiworld.regions.append(dispenser_region)
-        print("Created: " + str(dispenser_region))
         # state.has("Progressive Digging", self.player, 2)
         # if name == "Premium Pebble Floor" or name == "Stained Concrete Floor" or name == "Snowy Carpet":
         parent.connect(dispenser_region, "Use " + name, lambda state: state.has(name, self.player))
@@ -115,7 +112,6 @@ class WobbleDogsWorld(World):
         for key, value in self.local_wobbledogs_data["food"].items():
             if value["source"] != name:
                 continue
-            print("Adding " + key + " to: " + name)
             requires_digging_level = 0
             # TODO: replace! YUCK!
             if key == "Snowball" or key == "Dirt Clump":
@@ -130,7 +126,7 @@ class WobbleDogsWorld(World):
                 if self.item_name_to_id.get(key) is None:
                     dispenser_region.connect(food_region, None)
                 else:
-                    dispenser_region.connect(food_region, None, lambda state: state.has(key, self.player, 1))
+                    dispenser_region.connect(food_region, None, lambda state, k=key: state.has(k, self.player, 1))
 
             food_region.connect(dispenser_region)
 
@@ -138,22 +134,23 @@ class WobbleDogsWorld(World):
 
     def create_flora_region(self, name: str):
         flora_region = Region(name, self.player, self.multiworld)
-        self.add_event_to_region(name + " Flora Found", "Gut Flora", flora_region)
+        access_rule = lambda state, n=name: state.has(n, self.player)
+        self.add_event_to_region(name + " Flora Found", "Gut Flora", flora_region, access_rule)
         effect_num = 0
         for mutator, _ in self.local_wobbledogs_data["flora"][name].items():
             effect_num += 1
-            self.add_event_to_region(name + " Effect #" + str(effect_num), mutator, flora_region)
+            self.add_event_to_region(name + " Effect #" + str(effect_num), mutator, flora_region, access_rule)
         self.multiworld.regions.append(flora_region)
 
-        if self.options.sanity_flora:
-            flora_region.locations.append(self.create_location_from_name(name + " Guide Page Completed", flora_region))
+        if self.options.flora_sanity:
+            flora_region.locations.append(self.create_location_from_name(name + " Guide Page Completed", flora_region, access_rule))
 
         # Pretty sure this does nothing
         # flora_region.connect(self.home_region)
 
         return flora_region
 
-    def create_food_region(self, name: str, flora_regions: dict[str, Region]):
+    def create_food_region(self, name: str, flora_regions: dict[str, Region]) -> Region:
         food_region = Region(name, self.player, self.multiworld)
         self.multiworld.regions.append(food_region)
         food_data = self.local_wobbledogs_data["food"][name]
@@ -170,19 +167,19 @@ class WobbleDogsWorld(World):
         # print("got:" + str(data))
         ret = True
         item_requirements = data["requirements"].get("items")
-        if item_requirements is not None and len(item_requirements) > 0:
+        if item_requirements is not None:
             ret &= state.has_all_counts(item_requirements, self.player)
 
         mutator_requirements = data["requirements"].get("mutators")
-        if mutator_requirements is not None and len(mutator_requirements) > 0:
+        if mutator_requirements is not None:
             ret &= state.has_all(mutator_requirements, self.player)
 
         item_or_requirements = data["requirements"].get("items_or")
-        if item_or_requirements is not None and len(item_or_requirements) > 0:
+        if item_or_requirements is not None:
             ret &= state.has_any_count(item_or_requirements, self.player)
 
         mutator_or_requirements = data["requirements"].get("mutators_or")
-        if mutator_or_requirements is not None and len(mutator_or_requirements) > 0:
+        if mutator_or_requirements is not None:
             ret &= state.has_any(mutator_or_requirements, self.player)
 
         if data["requirements"].get("all_flora"):

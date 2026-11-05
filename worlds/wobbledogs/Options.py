@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-
+from .Defines import wobbledogs_data
 from Options import Toggle, Range, Choice, PerGameCommonOptions, OptionSet
 
 class AllowDogImporting(Toggle):
@@ -12,10 +12,15 @@ class FloraSanity(Toggle):
     display_name = "Flora-sanity"
     default = True
 
+class FloraLock(Toggle):
+    """If Flora should be locked behind items found in the multi-world. Will cause a generation failure if generating solo."""
+    display_name = "Flora-Lock"
+    default = False
+
 class ClearCondition(Choice):
     """The clear condition for the game."""
     display_name = "Clear Condition"
-    option_all_goals = 0 # Internally gets turned into specific goals with every single one included.
+    option_all_goals = 0
     option_specific_goals = 1
     option_dog_match = 2
     default = 0
@@ -23,7 +28,7 @@ class ClearCondition(Choice):
 class SpecificGoalClearSelectedGoals(OptionSet):
     """Which goals/achievements should be counted for the Specific Goals clear condition"""
     default = {"A Bit More Wobbly", "Ancient", "Bigheaded", "Flat", "Leggy", "Long", "One Winged Angel", "Peabrained", "Short", "Small", "Spindly", "Take To The Skies!", "Two Faced", "What's This?", "Wide", "Worm", "More of Them!"}
-    # TODO: put valid_keys definition here
+    valid_keys = wobbledogs_data["goals"].keys()
 
 class RandomizeStartingFoodDispenser(Toggle):
     """Randomizes the Food Dispenser you get during the tutorial"""
@@ -44,4 +49,5 @@ class WobbleDogsOptions(PerGameCommonOptions):
     clear_condition: ClearCondition
     specific_goal_goals: SpecificGoalClearSelectedGoals
     allow_imports: AllowDogImporting
-    sanity_flora: FloraSanity
+    flora_sanity: FloraSanity
+    flora_lock: FloraLock

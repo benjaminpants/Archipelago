@@ -1,6 +1,6 @@
 {
     "A Bit More Wobbly":{
-		"priority":true,
+		"priority":false,
 		"reward":"Noble Dog Statue",
 		"requirements": {
 			"items":{
@@ -102,7 +102,7 @@
 		}
 	},
 	"Egg Hobbyist":{
-		"priority":false,
+		"priority":true,
 		"reward":"Suburban Food Dispenser",
 		"requirements": {
 			"items":{},
@@ -136,7 +136,7 @@
 		}
 	},
 	"Extra Help":{
-		"priority":true,
+		"priority":false,
 		"reward":"Ants on a Log",
 		"requirements": {
 			"items":{
@@ -182,7 +182,7 @@
 		"reward":"Spacelab Food Dispenser"
 	},
 	"Good Dirt Living":{
-		"priority":false,
+		"priority":true,
 		"reward":"Jungle Food Dispenser",
 		"requirements": {
 			"items":{
@@ -224,7 +224,7 @@
 		}
 	},
 	"I'll Always Remember You":{
-		"priority":false,
+		"priority":true,
 		"reward":"Spooky Food Dispenser"
 	},
 	"Keepin' It Clean":{
@@ -556,7 +556,7 @@
 		}
 	},
 	"Wide":{
-		"priority":false,
+		"priority":true,
 		"reward":"Dessert Dispenser",
 		"requirements": {
 			"items":{
