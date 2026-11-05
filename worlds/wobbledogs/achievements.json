@@ -1,0 +1,578 @@
+{
+    "A Bit More Wobbly":{
+		"priority":true,
+		"reward":"Noble Dog Statue",
+		"requirements": {
+			"items":{
+				"Progressive Instability":10
+			},
+			"mutators":[]
+		}
+	},
+	"A Long Day's Work":{
+		"priority":false,
+		"reward":"Apple Slice",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Ancient":{
+		"priority":false,
+		"reward":"Burnt Dog Biscuit",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Big":{
+		"priority":true,
+		"reward":"Pumpkin Pie",
+		"requirements": {
+			"items":{},
+			"mutators":["Big"]
+		}
+	},
+	"Bigheaded":{
+		"priority":true,
+		"reward":"Phonograph",
+		"requirements": {
+			"items":{},
+			"mutators":["Big Head"]
+		}
+	},
+	"Cramped":{
+		"priority":false,
+		"reward":"Dog Pen",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Crrrrack!":{
+		"priority":false,
+		"reward":"Rock Speaker",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Dirt Eater":{
+		"priority":false,
+		"reward":"Mud Floor",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Don't Slip":{
+		"priority":false,
+		"reward":"Ground Ivy",
+		"requirements": {
+			"items_or":{
+				"Vacuum":1,
+				"Robotic Vaccum":1,
+				"Clean-up Broom":1
+			},
+			"mutators":[]
+		}
+	},
+	"Down To Earth":{
+		"priority":false,
+		"reward":"Dog Pen",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Dry As A Bone":{
+		"priority":false,
+		"reward":"Dog Pen",
+		"requirements": {
+			"items_or":{
+				"Vacuum":1,
+				"Robotic Vaccum":1,
+				"Clean-up Broom":1
+			},
+			"mutators":[]
+		}
+	},
+	"Egg Hobbyist":{
+		"priority":false,
+		"reward":"Suburban Food Dispenser",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Egg Maniac":{
+		"priority":true,
+		"reward":"Granule",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Egg Novice":{
+		"priority":false,
+		"reward":"Cloud Wallpaper",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Excavator":{
+		"priority":true,
+		"reward":"Tree x10",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Extra Help":{
+		"priority":true,
+		"reward":"Ants on a Log",
+		"requirements": {
+			"items":{
+				"Progressive Instability":10
+			},
+			"mutators":["Leg Number"]
+		}
+	},
+	"Extruded":{
+		"priority":true,
+		"reward":"Dog Pen",
+		"requirements": {
+			"items":{
+				"Progressive Instability":8
+			},
+			"mutators":["Tall Body"]
+		}
+	},
+	"Fabulous Prizes":{
+		"priority":true,
+		"reward":"Arcade Floor"
+	},
+	"Flat":{
+		"priority":true,
+		"reward":"Lunar Pie",
+		"requirements": {
+			"items":{},
+			"mutators":["Flat Body"]
+		}
+	},
+	"Getting Busy":{
+		"priority":false,
+		"reward":"Weed Mix",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Getting Into It":{
+		"priority":false,
+		"reward":"Spacelab Food Dispenser"
+	},
+	"Good Dirt Living":{
+		"priority":false,
+		"reward":"Jungle Food Dispenser",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Green Thumb":{
+		"priority":false,
+		"reward":"Flower Wallpaper",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 2
+			},
+			"mutators":[]
+		}
+	},
+	"Gross":{
+		"priority":false,
+		"reward":"Chicken Nugget",
+		"requirements": {
+			"items_or":{
+				"Pooper Scooper":1,
+				"Robotic Vaccum":1,
+				"Clean-up Broom":1
+			},
+			"mutators":[]
+		}
+	},
+	"Gut Expert":{
+		"priority":false,
+		"reward":"Superior",
+		"requirements": {
+			"all_flora": true,
+			"items":{
+				"Progressive Instability":10
+			}
+		}
+	},
+	"I'll Always Remember You":{
+		"priority":false,
+		"reward":"Spooky Food Dispenser"
+	},
+	"Keepin' It Clean":{
+		"priority":false,
+		"reward":"Robotic Vacuum",
+		"requirements": {
+			"items_or":{
+				"Vacuum":1,
+				"Robotic Vaccum":1,
+				"Clean-up Broom":1
+			},
+			"mutators":[]
+		}
+	},
+	"Leggy":{
+		"priority":true,
+		"reward":"Honeycomb",
+		"requirements": {
+			"items":{
+				"Progressive Instability":9
+			},
+			"mutators":["Leg Number"]
+		}
+	},
+	"Long":{
+		"priority":true,
+		"reward":"Caterpillar Statue",
+		"requirements": {
+			"items":{
+				"Progressive Instability":7
+			},
+			"mutators":["Long Body"]
+		}
+	},
+	"Made With Love":{
+		"priority":false,
+		"reward":"Doggy Bopper"
+	},
+	"Mail Time":{
+		"priority":false,
+		"reward":"Storage Chest"
+	},
+	"Massive Litter":{
+		"priority":true,
+		"reward":"Industrial Fan",
+		"requirements": {
+			"items":{
+				"Progressive Instability":5
+			},
+			"mutators":[]
+		}
+	},
+	"Matchmaker":{
+		"priority":false,
+		"reward":"Dog Egg"
+	},
+	"Meticulous":{
+		"priority":true,
+		"reward":"Dog Pen",
+		"requirements": {
+			"all_flora":true
+		}
+	},
+	"More of Them!":{
+		"priority":true,
+		"reward":"Alien Wall",
+		"requirements": {
+			"items":{
+				"Progressive Instability":10
+			},
+			"mutators_or":["Big Tail", "Tiny Tail"]
+		}
+	},
+	"Negative Reinforcement":{
+		"priority":false,
+		"reward":"Mud"
+	},
+	"New Baby":{
+		"priority":false,
+		"reward":"Golden Lupine Flowers"
+	},
+	"Oh No":{
+		"priority":false,
+		"reward":"Inflatable Dog"
+	},
+	"One Winged Angel":{
+		"priority":true,
+		"reward":"CD Player",
+		"requirements": {
+			"items":{
+				"Progressive Instability":10
+			},
+			"mutators_or":["Big Wings", "Tiny Wings"]
+		}
+	},
+	"Out Of This World":{
+		"priority":true,
+		"reward":"Gravity Machine",
+		"requirements": {
+			"items":{
+				"Space Carpet Unlock":1,
+				"Space Wallpaper Unlock":1
+			},
+			"mutators":[]
+		}
+	},
+	"Peabrained":{
+		"priority":true,
+		"reward":"Jukebox",
+		"requirements": {
+			"items":{},
+			"mutators":["Tiny Head"]
+		}
+	},
+	"Pop":{
+		"priority":false,
+		"reward":"Blue Blanket Flowers"
+	},
+	"Positive Reinforcement":{
+		"priority":false,
+		"reward":"Proto"
+	},
+	"Quick Learner":{
+		"priority":true,
+		"reward":"Randy"
+	},
+	"Recycling":{
+		"priority":true,
+		"reward":"Mochi Ball",
+		"requirements": {
+			"items":{
+				"Ghost Summoning": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Remodel":{
+		"priority":true,
+		"reward":"Dog Biscuit",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 2
+			},
+			"mutators":[]
+		}
+	},
+	"Researcher":{
+		"priority":true,
+		"reward":"Road Carpet",
+		"requirements": {
+			"items":{
+				"Gut Flora": 10
+			},
+			"mutators":[]
+		}
+	},
+	"Safe Keeping":{
+		"priority":false,
+		"reward":"Pink Daisy Flowers",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Scary!":{
+		"priority":false,
+		"reward":"Ghost Summoning"
+	},
+	"Seriously Unstable":{
+		"priority":true,
+		"reward":"Simulated Floor",
+		"requirements": {
+			"items":{
+				"Progressive Instability":10
+			},
+			"mutators":[]
+		}
+	},
+	"Short":{
+		"priority":false,
+		"reward":"Corndog",
+		"requirements": {
+			"items":{
+				"Progressive Instability":7
+			},
+			"mutators":["Short Body"]
+		}
+	},
+	"Sickening":{
+		"priority":false,
+		"reward":"Garlic Bulb"
+	},
+	"Small":{
+		"priority":false,
+		"reward":"Strange Plush",
+		"requirements": {
+			"items":{},
+			"mutators":["Small"]
+		}
+	},
+	"Small Beginnings":{
+		"priority":false,
+		"reward":"Outdoor Flooring",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 2
+			},
+			"mutators":[]
+		}
+	},
+	"So Many Babies":{
+		"priority":false,
+		"reward":"Dog Pen"
+	},
+	"So Many Plants":{
+		"priority":false,
+		"reward":"Dog Pen",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 2
+			},
+			"mutators":[]
+		}
+	},
+	"Someone's Gotta Do It":{
+		"priority":false,
+		"reward":"Toilet Paper Roll x10",
+		"requirements": {
+			"items_or":{
+				"Pooper Scooper":1,
+				"Robotic Vaccum":1,
+				"Clean-up Broom":1
+			}
+		}
+	},
+	"Spacious":{
+		"priority":false,
+		"reward":"Dog Stack",
+		"requirements": {
+			"items":{
+				"Progressive Digging": 1
+			},
+			"mutators":[]
+		}
+	},
+	"Spindly":{
+		"priority":false,
+		"reward":"Wooden Carpet",
+		"requirements": {
+			"items":{
+				"Progressive Instability": 7
+			},
+			"mutators":["Long Legs"]
+		}
+	},
+	"Take To The Skies!":{
+		"priority":false,
+		"reward":"Doggy Launcher",
+		"requirements": {
+			"items":{
+				"Progressive Instability":5
+			},
+			"mutators_or":["Big Wings", "Tiny Wings"]
+		}
+	},
+	"Taking Care Of Business":{
+		"priority":false,
+		"reward":"Ham Slider",
+		"requirements": {
+			"items_or":{
+				"Pooper Scooper":1,
+				"Robotic Vaccum":1,
+				"Clean-up Broom":1
+			},
+			"mutators":[]
+		}
+	},
+	"That's The Stuff":{
+		"priority":false,
+		"reward":"Foam Ham",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Time Well Spent":{
+		"priority":false,
+		"reward":"Dog Pen",
+		"requirements": {
+			"items":{},
+			"mutators":[]
+		}
+	},
+	"Tiny Litter":{
+		"priority":false,
+		"reward":"Dog Egg",
+		"requirements": {
+			"items":{
+				"Progressive Instability": 9
+			},
+			"mutators":[]
+		}
+	},
+	"Tragedy":{
+		"priority":false,
+		"reward":"Doggivision Jr"
+	},
+	"Two Faced":{
+		"priority":false,
+		"reward":"Fortune Cookie",
+		"requirements": {
+			"items":{
+				"Progressive Instability": 8
+			},
+			"mutators":[]
+		}
+	},
+	"Um...":{
+		"priority":false,
+		"reward":"Pizza Bagel"
+	},
+	"What's This?":{
+		"priority":false,
+		"reward":"Vine Wallpaper",
+		"requirements": {
+			"mutators_or":["Big Tail", "Tiny Tail"]
+		}
+	},
+	"Wide":{
+		"priority":false,
+		"reward":"Dessert Dispenser",
+		"requirements": {
+			"items":{
+				"Progressive Instability": 3
+			},
+			"mutators":["Wide Body"]
+		}
+	},
+	"Worm":{
+		"priority":false,
+		"reward":"Pizza Tube",
+		"requirements": {
+			"items":{
+				"Progressive Instability": 10
+			},
+			"mutators":["Leg Number"]
+		}
+	}
+}

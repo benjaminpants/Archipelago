@@ -1,0 +1,344 @@
+{
+	"Nutritional Pellet": {
+		"source": "Classic Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["0x1042"]
+	},
+	"Burrito": {
+		"source": "Classic Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Clisotrium Latriphilius"]
+	},
+	"Ham Slider": {
+		"source": "Classic Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Dropilia"]
+	},
+	"French Fry": {
+		"source": "Classic Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Phriole"]
+	},
+	"Chicken Nugget": {
+		"source": "Classic Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Phenobacti"]
+	},
+	"Corndog": {
+		"source": "Classic Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Cani Hyphacamphi"]
+	},
+	"Alien Fruit": {
+		"source": "Spacelab Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Lucium Coli", "Proteus Incognia"]
+	},
+	"Dehydrated Treat": {
+		"source": "Spacelab Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Ectobacter"]
+	},
+	"Moon Cheese": {
+		"source": "Spacelab Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Dropilia", "Planum Mirabilis", "Ectobacter"]
+	},
+	"Lunar Pie": {
+		"source": "Spacelab Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Contrarialius", "Caseus Bacto"]
+	},
+	"Onion Ring": {
+		"source": "Spacelab Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Magnilium", "Peptocoli"]
+	},
+	"Pizza Tube": {
+		"source": "Spacelab Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Ectobacter", "Protobacillus"]
+	},
+	"Pancake": {
+		"source": "Suburban Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Caudi Caudi", "Planum Mirabilis"]
+	},
+	"Garlic Bread": {
+		"source": "Suburban Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Nasus Enterica", "Caudi Caudi"]
+	},
+	"Chip": {
+		"source": "Suburban Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Caseus Bacto", "0x1042"]
+	},
+	"Lasagna": {
+		"source": "Suburban Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Magnilium"]
+	},
+	"Apple Slice": {
+		"source": "Suburban Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Bacto Bacto"]
+	},
+	"Pizza Bagel": {
+		"source": "Suburban Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Magnilium", "Nasus Enterica"]
+	},
+	"Candied Apple": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Bacto Bacto", "Enteria"]
+	},
+	"Decorative Corn": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Contrarialius", "Bacto Bacto"]
+	},
+	"Deviled Egg": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Phenobacti", "Lucium Coli"]
+	},
+	"Garlic Bulb": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Nasus Enterica"]
+	},
+	"Pumpkin Pie": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Lucium Coli", "Contrarialius"]
+	},
+	"Gourd": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Peptocoli"]
+	},
+	"Candy Corn": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Auro Calphus", "Frumentium"]
+	},
+	"Mini Pumpkin": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Auro Calphus"]
+	},
+	"Box Of Raisins": {
+		"source": "Spooky Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Minimillius", "Phenobacti"]
+	},
+	"Ants On a Log": {
+		"source": "Jungle Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Phenobacti", "Phriole"]
+	},
+	"Banana": {
+		"source": "Jungle Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Protrusia"]
+	},
+	"Coconut": {
+		"source": "Jungle Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Clisotrium Latriphilius", "Contrarialius"]
+	},
+	"Cut Fruit": {
+		"source": "Jungle Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Peptocoli", "Bacto Bacto"]
+	},
+	"Honeycomb": {
+		"source": "Jungle Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Ratium"]
+	},
+	"Burnt Dog Biscuit": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Perdictus Coli"]
+	},
+	"Dog Biscuit": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": []
+	},
+	"Churro": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Cani Hyphacamphi", "Clarabacto"]
+	},
+	"Birthday Cake Slice": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Latallius"]
+	},
+	"Doughnut": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Lucium Coli", "Scilistus"]
+	},
+	"Fortune Cookie": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Cornucilli"]
+	},
+	"Gelatin Mold": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Viridium"]
+	},
+	"Macaron": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":true,
+		"flora": ["Testabacti"]
+	},
+	"Mochi Ball": {
+		"source": "Dessert Food Dispenser",
+		"source_randomizable": true,
+		"default":false,
+		"flora": ["Clisotrium Latriphilius", "Phenobacti", "Masticillus"]
+	},
+	"Candy Cane": {
+		"source": "Snowy Carpet",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Feruli", "Protrusia"]
+	},
+	"Cheese Ball": {
+		"source": "Snowy Carpet",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Clisotrium Latriphilius", "Nasus Enterica"]
+	},
+	"Fruit Cake": {
+		"source": "Snowy Carpet",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Enteria", "Luxillium"]
+	},
+	"Baby Tooth": {
+		"source": "Wobbledog",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Bactocalcia"]
+	},
+	"Dog Parts": {
+		"source": "Wobbledog",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Canem Labo"]
+	},
+	"Dud Egg": {
+		"source": "Wobbledog",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Crysilia", "Scaph"]
+	},
+	"Ectoplasm": {
+		"source": "Wobbledog",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Ectoplasmoid"]
+	},
+	"Empty Cocoon": {
+		"source": "Wobbledog",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Crysilia"]
+	},
+	"Half-Eaten Food": {
+		"source": "Wobbledog",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Scaph"]
+	},
+	"Poop": {
+		"source": "Wobbledog",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Scaph"]
+	},
+	"Dirt Clump": {
+		"source": "Ground",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Dirt"]
+	},
+	"Snowball": {
+		"source": "Snowy Carpet",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Snow"]
+	},
+	"Sample Cup": {
+		"source": "Sample Table",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Poculli"]
+	},
+	"Cactus Fruit": {
+		"source": "Prickly Pear",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Fructo", "Bacto Bacto"]
+	},
+	"Fish Pellet": {
+		"source": "Premium Pebble Floor",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Compactium"]
+	},
+	"Insulation Tuft": {
+		"source": "Stained Concrete Floor",
+		"source_randomizable": false,
+		"default":true,
+		"flora": ["Periculli"]
+	}
+}
