@@ -243,6 +243,6 @@ class WobbleDogsWorld(World):
         self.home_region.connect(self.create_food_region("Empty Cocoon", flora_regions))
         self.home_region.connect(self.create_food_region("Ectoplasm", flora_regions))
         self.home_region.connect(self.create_food_region("Dog Parts", flora_regions))
-        self.home_region.connect(self.create_food_region("Dud Egg", flora_regions))
+        self.home_region.connect(self.create_food_region("Dud Egg", flora_regions), None, lambda state: state.has("Scaph", self.player)) # Need a decent amount of scaph for reasonable drop rates/for it to drop at all
         self.home_region.connect(self.create_food_region("Poop", flora_regions))
         self.home_region.connect(self.create_food_region("Dirt Clump", flora_regions), None, lambda state: state.has("Progressive Digging", self.player, 1))

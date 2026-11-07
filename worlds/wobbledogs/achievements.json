@@ -207,7 +207,6 @@
 		"requirements": {
 			"items_or":{
 				"Pooper Scooper":1,
-				"Robotic Vaccum":1,
 				"Clean-up Broom":1
 			},
 			"mutators":[]
@@ -258,6 +257,10 @@
 			},
 			"mutators":["Long Body"]
 		}
+	},
+	"Love Machine":{
+		"priority":false,
+		"reward":"Simulated Wall"
 	},
 	"Made With Love":{
 		"priority":false,
@@ -498,7 +501,6 @@
 		"requirements": {
 			"items_or":{
 				"Pooper Scooper":1,
-				"Robotic Vaccum":1,
 				"Clean-up Broom":1
 			},
 			"mutators":[]
@@ -574,5 +576,13 @@
 			},
 			"mutators":["Leg Number"]
 		}
+	},
+	"More Babies":{
+		"priority":false,
+		"reward":"Deviled Egg"
+	},
+	"All Grown Up":{
+		"priority":false,
+		"reward":"Dog Pen"
 	}
 }

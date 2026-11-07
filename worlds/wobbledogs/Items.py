@@ -130,6 +130,7 @@ wobbledogs_item_data_table: dict[str, WobbledogsItemData] = {
     "Foam Ham": WobbledogsItemData(wobbledogs_base_id + 54,None),
     "Doggivision Jr": WobbledogsItemData(wobbledogs_base_id + 55,None),
     "Vine Wallpaper": WobbledogsItemData(wobbledogs_base_id + 56,None),
+    "Simulated Wall": WobbledogsItemData(wobbledogs_base_id + 57,None),
 }
 
 current_id = wobbledogs_base_id + 100 # Give room for about 50 or so extra items if need be
