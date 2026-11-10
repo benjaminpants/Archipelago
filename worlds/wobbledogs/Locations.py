@@ -22,5 +22,9 @@ for key, value in wobbledogs_data["goals"].items():
 
 # Add every flora completion as a location for use with Florasanity
 for key, value in wobbledogs_data["flora"].items():
-    wobbledogs_location_table[key + " Guide Page Completed"] = WobbledogsLocationData(current_id, LocationProgressType.DEFAULT)
+    wobbledogs_location_table[key + " Guide Page Effects Completed"] = WobbledogsLocationData(current_id, LocationProgressType.DEFAULT)
+    current_id = current_id + 1
+
+for key, value in wobbledogs_data["flora"].items():
+    wobbledogs_location_table[key + " Guide Page Occurrences Completed"] = WobbledogsLocationData(current_id, LocationProgressType.DEFAULT)
     current_id = current_id + 1

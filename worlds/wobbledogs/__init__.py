@@ -1,6 +1,8 @@
 import logging
 import copy
 from collections import OrderedDict
+from typing import Mapping, Any
+
 from BaseClasses import Region, ItemClassification, MultiWorld, CollectionState, LocationProgressType
 from .Options import *
 from .Items import wobbledogs_item_data_table, wobbledogs_always_in_items, WobbledogsItem
@@ -8,8 +10,6 @@ from .Locations import wobbledogs_location_table, WobbledogsLocation
 from .Defines import wobbledogs_data
 from worlds.AutoWorld import World, WebWorld
 
-# TODO: replace dummy food dispenser code with actual code that stores a food dispenser list, takes one during the region making process and saves the rest for the item pool filling
-# TODO: implement flora regions and flora locations, alongside events for the individual mutators
 # TODO: implement all the randomizations
 class WobbleDogsWorld(World):
     """Wobbledogs is a 3D pet simulation where you raise your own personal hive of rapidly mutating dogs, physically simulated all the way down to their guts!"""
@@ -33,6 +33,7 @@ class WobbleDogsWorld(World):
         self.chosen_starting_dispenser = None
         self.local_wobbledogs_data: dict[str, OrderedDict] = None
         self.home_region = None
+        self.flora_required_food_access: dict[str, list[str]] = {}
         self.available_food_dispensers = ["Classic Food Dispenser", "Spacelab Food Dispenser", "Suburban Food Dispenser", "Spooky Food Dispenser", "Jungle Food Dispenser", "Dessert Food Dispenser"]
 
     def create_item(self, name: str):
@@ -142,8 +143,8 @@ class WobbleDogsWorld(World):
             self.add_event_to_region(name + " Effect #" + str(effect_num), mutator, flora_region, access_rule)
         self.multiworld.regions.append(flora_region)
 
-        if self.options.flora_sanity:
-            flora_region.locations.append(self.create_location_from_name(name + " Guide Page Completed", flora_region, access_rule))
+        if self.options.flora_effect_sanity:
+            flora_region.locations.append(self.create_location_from_name(name + " Guide Page Effects Completed", flora_region, access_rule))
 
         # Pretty sure this does nothing
         # flora_region.connect(self.home_region)
@@ -155,11 +156,13 @@ class WobbleDogsWorld(World):
         self.multiworld.regions.append(food_region)
         food_data = self.local_wobbledogs_data["food"][name]
 
-        # Uncomment to see the horrors.
-        # self.add_event_to_region(name + " Food Found", name + " Food Found", food_region)
+        self.add_event_to_region(name + " Reached", name + " Reached", food_region)
 
         for flora in food_data["flora"]:
             food_region.connect(flora_regions[flora])
+            if flora not in self.flora_required_food_access:
+                self.flora_required_food_access[flora] = []
+            self.flora_required_food_access[flora].append(name + " Reached")
 
         return food_region
 
@@ -187,12 +190,26 @@ class WobbleDogsWorld(World):
 
         return ret
 
+    def fill_slot_data(self) -> Mapping[str, Any]:
+        ret_dict = {
+            "clear_condition": int(self.options.clear_condition),
+            "goal_percentage": float(self.options.goal_percentage),
+            "specific_goal_goals": list[str](self.options.specific_goal_goals),
+            "random_default_dog": int(self.options.random_default_dog),
+        }
+        return ret_dict
+
     # Create all the regions and locations we need, the data should already be randomized.
     def create_regions(self) -> None:
-        if self.options.clear_condition == 0:
-            self.multiworld.completion_condition[self.player] = lambda state: state.has("Goal Completion", self.player, len(self.local_wobbledogs_data["goals"].keys()))
-        else:
-            raise Exception("Unimplemented Clear Condition: " + self.options.clear_condition)
+        match self.options.clear_condition:
+            case 0:
+                self.multiworld.completion_condition[self.player] = lambda state: state.has("Goal Completion", self.player, len(self.local_wobbledogs_data["goals"].keys()))
+            case 1:
+                self.multiworld.completion_condition[self.player] = lambda state: state.has("Goal Completion", self.player, len(list[str](self.options.specific_goal_goals)))
+            case 2:
+                self.multiworld.completion_condition[self.player] = lambda state: state.has("Goal Completion", self.player, round(len(self.local_wobbledogs_data["goals"].keys()) * (self.options.goal_percentage / 100)))
+            case _:
+                raise Exception("Unimplemented Clear Condition: " + self.options.clear_condition)
 
         menu_region = Region("Menu", self.player, self.multiworld)
         self.multiworld.regions.append(menu_region)
@@ -220,7 +237,8 @@ class WobbleDogsWorld(World):
                 self.home_region.connect(goal_region, None, access_rule)
 
             goal_region.locations.append(self.create_location_from_name(key, self.home_region))
-            self.add_event_to_region(key + " Completed", "Goal Completion", goal_region)
+            if self.options.clear_condition != 1 or self.options.specific_goal_goals.__contains__(key):
+                self.add_event_to_region(key + " Completed", "Goal Completion", goal_region)
 
         # Create all flora regions
         flora_regions: dict[str, Region] = {}
@@ -237,7 +255,6 @@ class WobbleDogsWorld(World):
             self.create_food_dispenser_regions(giver, flora_regions, self.home_region)
 
         # Handle other food connections
-        # HOW IS THIS FAILING
         self.home_region.connect(self.create_food_region("Baby Tooth", flora_regions))
         self.home_region.connect(self.create_food_region("Half-Eaten Food", flora_regions))
         self.home_region.connect(self.create_food_region("Empty Cocoon", flora_regions))
@@ -246,3 +263,14 @@ class WobbleDogsWorld(World):
         self.home_region.connect(self.create_food_region("Dud Egg", flora_regions), None, lambda state: state.has("Scaph", self.player)) # Need a decent amount of scaph for reasonable drop rates/for it to drop at all
         self.home_region.connect(self.create_food_region("Poop", flora_regions))
         self.home_region.connect(self.create_food_region("Dirt Clump", flora_regions), None, lambda state: state.has("Progressive Digging", self.player, 1))
+
+        if self.options.flora_occurrence_sanity:
+            for key, value in self.flora_required_food_access.items():
+                fr_local = None
+                if key == "Canem Labo": # Wings are needed since every individual part is its own page
+                    fr_local = self.create_location_from_name(key + " Guide Page Occurrences Completed", flora_regions[key], lambda state, val=value: state.has_all(val, self.player) and state.has_any(["Big Wings", "Tiny Wings"], self.player))
+                else:
+                    fr_local = self.create_location_from_name(key + " Guide Page Occurrences Completed", flora_regions[key], lambda state, val=value: state.has_all(val, self.player))
+                flora_regions[key].locations.append(fr_local)
+
+
